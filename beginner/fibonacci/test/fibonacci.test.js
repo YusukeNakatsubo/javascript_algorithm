@@ -1,5 +1,5 @@
 const assert = require('assert')
-const fibonacci = require('../fibonacci')
+const fibonacci = require('../fibonacci.edit')
 
 describe('fibonacci', () => {
   it('should calculate fibonacci correctly', () => {
