@@ -73,7 +73,30 @@ module.exports = function factorialRecursive(number) {
 ### Trial Division(素数判定)
 
 ```javascript
+/**
+ * @param {number} number
+ * @return {boolean}
+ */
+ module.exports = function trialDivision(number) {
+  // Check if number is integer.
+  if (number % 1 !== 0) { return false }
 
+  // If number is less than one then it isn't prime by definition.
+  if (number <= 1) { return false }
+
+  // All numbers from 2 to 3 are prime.
+  if (number <= 3) { return true }
+
+  // If the number is not divided by 2 then we may eliminate all further even dividers.
+  if (number % 2 === 0) { return false }
+
+  // If there is no dividers up to square root of n then there is no higher dividers as well.
+  const dividerLimit = Math.sqrt(number);
+  for (let divider = 3; divider <= dividerLimit; divider += 2) {
+    if (number % divider === 0) { return false }
+  }
+  return true
+}
 ```
 
 ## Note
@@ -84,3 +107,9 @@ module.exports = function factorialRecursive(number) {
 >エクスポートされたモジュールは、宣言のあるなしにかかわらず Strict モードで動作します。export 文は、埋め込みスクリプトでは使えません。
 
 [export](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/export)
+
+### Math.sqrt
+
+>Math.sqrt() 関数は、ある数の平方根を返します。
+
+[Math.sqrt](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt)
