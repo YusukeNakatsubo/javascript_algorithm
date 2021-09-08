@@ -70,6 +70,12 @@ module.exports = function factorialRecursive(number) {
 }
 ```
 
+### Trial Division(素数判定)
+
+```javascript
+
+```
+
 ## Note
 
 ### export
