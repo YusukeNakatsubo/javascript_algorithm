@@ -23,7 +23,7 @@ module.exports = function factorial(number) {
 }
 ```
 
-### 再帰関数
+#### 再帰関数
 [再帰関数を学ぶと、どんな世界が広がるか](https://qiita.com/drken/items/23a4f604fa3f505dd5ad)
 
 >再帰の意味はとても広いです。自分自身を呼び出す関数を再帰的 (recursive) であると呼び、再帰的な関数のことを再帰関数 (recursive function) と呼びます。また再帰的に関数を呼び出すことを再帰呼び出し (recursive call) と呼びます。とにかく、自分自身を呼び出しさえすれば、再帰的であると言えます。広い概念ですね！！！！！
@@ -35,6 +35,38 @@ module.exports = function factorial(number) {
  */
 module.exports = function factorialRecursive(number) {
   return number > 1 ? number * factorialRecursive(number - 1) : 1
+}
+```
+
+### Fibonacci(フィボナッチ数列)
+
+```javascript
+/**
+ * Return a fibonacci sequence as an array.
+ *
+ * @param {number} number
+ * @return {number[]}
+ */
+ module.exports = function fibonacci(number) {
+  const fibSequence = [1]
+
+  let currentValue = 1
+  let previousValue = 0
+
+  if (number === 1) { return fibSequence }
+
+  let iterationsCounter = number - 1
+
+  while (iterationsCounter) {
+    currentValue += previousValue
+    previousValue = currentValue - previousValue
+
+    fibSequence.push(currentValue)
+
+    iterationsCounter -= 1
+  }
+
+  return fibSequence
 }
 ```
 
