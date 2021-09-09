@@ -99,6 +99,29 @@ module.exports = function factorialRecursive(number) {
 }
 ```
 
+### Euclidean algorithm(ユークリッドの互除法)
+
+```javascript
+/**
+ * Recursive version of Euclidean Algorithm of finding greatest common divisor (GCD).
+ * @param {number} numberX
+ * @param {number} numberY
+ * @return {number}
+ */
+ module.exports = function euclideanAlgorithm(numberX, numberY) {
+  // Make input numbers positive.
+  const x = Math.abs(numberX)
+  const y = Math.abs(numberY)
+
+  // To make algorithm work faster instead of subtracting one number from the other
+  // we may use modulo operation.
+  // ユークリッドの互除法 -> 割り切れるまであまりで互いに割り（除法）続ける
+  console.log(`is X = ${x}`)
+  console.log(`is Y = ${y}`)
+  return (y === 0) ? x : euclideanAlgorithm(y, x % y)
+}
+```
+
 ## Note
 
 ### export
@@ -108,8 +131,16 @@ module.exports = function factorialRecursive(number) {
 
 [export](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/export)
 
-### Math.sqrt
+### Math.sqrt()
 
 >Math.sqrt() 関数は、ある数の平方根を返します。
 
-[Math.sqrt](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt)
+[Math.sqrt()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt)
+
+###  Math.abs()
+
+>Math.abs() 関数は、数値の絶対値を返します。
+
+[Math.abs()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/abs)
+
+

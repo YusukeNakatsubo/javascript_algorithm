@@ -1,0 +1,22 @@
+const assert = require('assert')
+const euclideanAlgorithm =  require('../euclidean')
+
+describe('euclideanAlgorithm', () => {
+  it('should calculate GCD recursively', () => {
+    assert.equal(euclideanAlgorithm(0, 0),0)
+    assert.equal(euclideanAlgorithm(2, 0),2)
+    assert.equal(euclideanAlgorithm(0, 2),2)
+    assert.equal(euclideanAlgorithm(1, 2),1)
+    assert.equal(euclideanAlgorithm(2, 1),1)
+    assert.equal(euclideanAlgorithm(6, 6),6)
+    assert.equal(euclideanAlgorithm(2, 4),2)
+    assert.equal(euclideanAlgorithm(4, 2),2)
+    assert.equal(euclideanAlgorithm(12, 4),4)
+    assert.equal(euclideanAlgorithm(4, 12),4)
+    assert.equal(euclideanAlgorithm(5, 13),1)
+    assert.equal(euclideanAlgorithm(27, 13),1)
+    assert.equal(euclideanAlgorithm(24, 60),12)
+    assert.equal(euclideanAlgorithm(60, 24),12)
+    assert.equal(euclideanAlgorithm(252, 105),21)
+  })
+})
