@@ -99,7 +99,7 @@ module.exports = function factorialRecursive(number) {
 }
 ```
 
-### Euclidean algorithm(ユークリッドの互除法)
+### Euclidean algorithm(ユークリッドの互除法/最大公約数)
 
 ```javascript
 /**
@@ -122,7 +122,7 @@ module.exports = function factorialRecursive(number) {
 }
 ```
 
-### Least common multiple
+### Least common multiple(最小公倍数)
 
 ```javascript
 /**
