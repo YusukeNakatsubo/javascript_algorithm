@@ -122,6 +122,12 @@ module.exports = function factorialRecursive(number) {
 }
 ```
 
+### Least common multiple
+
+```javascript
+
+```
+
 ## Note
 
 ### export
