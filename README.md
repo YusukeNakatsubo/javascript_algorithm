@@ -7,11 +7,11 @@ $ npm install -g mocha
 ## Index
 
 - Beginner Course
- - Factorial(階乗)
- - Fibonacci(フィボナッチ数列)
- - Trial Division(素数判定)
- - Euclidean algorithm(ユークリッドの互除法/最大公約数)
- - Least common multiple(最小公倍数)
+  - Factorial(階乗)
+  - Fibonacci(フィボナッチ数列)
+  - Trial Division(素数判定)
+  - Euclidean algorithm(ユークリッドの互除法/最大公約数)
+  - Least common multiple(最小公倍数)
 
 ## Beginner Course
 
