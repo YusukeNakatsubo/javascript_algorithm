@@ -158,7 +158,42 @@ module.exports = function leastCommonMultiple(a, b) {
 >古代ギリシャの学者エラトステネスが考案した素数の選別法。自然数を小さい順に並べ、まず1を消去し、次に2、3、5…と小さい方の素数を残してそれらの倍数を消去することで、最終的にある整数以下のすべての素数が得られる。
 
 ```javascript
+/**
+ * @param {number} maxNumber
+ * @return {number[]}
+ */
+module.exports = function sieveOfEratosthenes(maxNumber) {
+  const isPrime = new Array(maxNumber + 1).fill(true)
+  isPrime[0] = false
+  isPrime[1] = false
 
+  const primes = []
+
+  for (let number = 2; number <= maxNumber; number += 1) {
+    if (isPrime[number] === true) {
+      primes.push(number)
+
+      /*
+       * Optimisation.
+       * Start marking multiples of `p` from `p * p`, and not from `2 * p`.
+       * The reason why this works is because, at that point, smaller multiples
+       * of `p` will have already been marked `false`.
+       *
+       * Warning: When working with really big numbers, the following line may cause overflow
+       * In that case, it can be changed to:
+       * let nextNumber = 2 * number
+       */
+      let nextNumber = number * number
+
+      while (nextNumber <= maxNumber) {
+        isPrime[nextNumber] = false
+        nextNumber += number
+      }
+    }
+  }
+
+  return primes;
+}
 ```
 
 ## Note
