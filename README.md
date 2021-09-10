@@ -12,6 +12,7 @@ $ npm install -g mocha
   - Trial Division(素数判定)
   - Euclidean algorithm(ユークリッドの互除法/最大公約数)
   - Least common multiple(最小公倍数)
+  - Sieve of Eratosthenes(エラトステネスのふるい)
 
 ## Beginner Course
 
@@ -153,6 +154,13 @@ module.exports = function leastCommonMultiple(a, b) {
 }
 ```
 
+### Sieve of Eratosthenes(エラトステネスのふるい)
+>古代ギリシャの学者エラトステネスが考案した素数の選別法。自然数を小さい順に並べ、まず1を消去し、次に2、3、5…と小さい方の素数を残してそれらの倍数を消去することで、最終的にある整数以下のすべての素数が得られる。
+
+```javascript
+
+```
+
 ## Note
 
 ### export
@@ -168,10 +176,14 @@ module.exports = function leastCommonMultiple(a, b) {
 
 [Math.sqrt()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt)
 
-###  Math.abs()
+### Math.abs()
 
 >Math.abs() 関数は、数値の絶対値を返します。
 
 [Math.abs()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/abs)
 
+### fill() 
 
+>fill() メソッドは、開始インデックス（デフォルトは 0）から終了インデックス（デフォルトは array.length）までのすべての要素を、静的な値に変更した配列を返します。
+
+[fill()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)
