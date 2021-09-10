@@ -37,7 +37,7 @@ const sieveOfEratosthenes = (maxNumber) => {
       // ある倍数の処理を終了する
     }
     // 素数のみ配列にpushされる
-    // console.log(primes) -> ex [ 2 ] -> [ 2, 3 ]
+    // console.log(primes) -> ex [ 2 ] -> [ 2, 3 ] -> [ 2, 3, 5 ] ...
   }
   return primes
 }

@@ -13,6 +13,7 @@ $ npm install -g mocha
   - Euclidean algorithm(ユークリッドの互除法/最大公約数)
   - Least common multiple(最小公倍数)
   - Sieve of Eratosthenes(エラトステネスのふるい)
+  - Is a power of two(累乗判定)
 
 ## Beginner Course
 
@@ -193,6 +194,26 @@ module.exports = function sieveOfEratosthenes(maxNumber) {
   }
 
   return primes;
+}
+```
+
+### Is a power of two(累乗判定)
+
+```javascript
+/**
+ * @param {number} number
+ * @return {boolean}
+ */
+module.exports = function isPowerOfTwo(number) {
+  if (number < 1) { return false }
+
+  let dividedNumber = number
+  while (dividedNumber !== 1) {
+    if (dividedNumber % 2 !== 0) { return false }
+    dividedNumber /= 2
+  }
+
+  return true
 }
 ```
 
