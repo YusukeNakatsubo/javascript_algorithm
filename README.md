@@ -225,7 +225,8 @@ module.exports = function isPowerOfTwo(number) {
 𝑛C𝑘
 ```
 
-#### 再帰関数で記述(直感的でわかりやすいケース)
+#### 再帰関数で記述
+Intuitive and easy to understand descriptions.
 
 ```javascript
 /**
