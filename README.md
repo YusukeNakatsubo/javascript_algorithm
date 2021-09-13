@@ -222,7 +222,7 @@ module.exports = function isPowerOfTwo(number) {
 
 
 ```math
-nCr
+n_C_r
 ```
 
 ```javascript
