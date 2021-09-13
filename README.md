@@ -230,7 +230,7 @@ module.exports = function isPowerOfTwo(number) {
  * @param {number} lineNumber - zero based.
  * @return {number[]}
  */
- export default function pascalTriangle(lineNumber) {
+ module.exports = function pascalTriangle (lineNumber) {
   const currentLine = [1];
 
   const currentLineSize = lineNumber + 1;
