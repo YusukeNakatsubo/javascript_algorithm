@@ -14,6 +14,7 @@ $ npm install -g mocha
   - Least common multiple(最小公倍数)
   - Sieve of Eratosthenes(エラトステネスのふるい)
   - Is a power of two(累乗判定)
+  - Pascal's Triangle(パスカルの三角形)
 
 ## Beginner Course
 
@@ -215,6 +216,17 @@ module.exports = function isPowerOfTwo(number) {
 
   return true
 }
+```
+
+### Pascal's Triangle(パスカルの三角形)
+
+
+```math
+nCr
+```
+
+```javascript
+
 ```
 
 ## Note
