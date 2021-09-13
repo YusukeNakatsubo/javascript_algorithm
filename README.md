@@ -226,7 +226,61 @@ module.exports = function isPowerOfTwo(number) {
 ```
 
 ```javascript
+/**
+ * @param {number} lineNumber - zero based.
+ * @return {number[]}
+ */
+ export default function pascalTriangle(lineNumber) {
+  const currentLine = [1];
 
+  const currentLineSize = lineNumber + 1;
+
+  for (let numIndex = 1; numIndex < currentLineSize; numIndex += 1) {
+    currentLine[numIndex] = (currentLine[numIndex - 1] * (lineNumber - numIndex + 1)) / numIndex;
+  }
+
+  return currentLine;
+}
+```
+
+Writing style that needs to be considered.
+
+```javascript
+const pascalTriangle = (lineNumber) => {
+  const currentLine = [[1]]
+  if (lineNumber === 1) { return currentLine }
+  const lastLineNumber = lineNumber
+  for(let i = 1; i < lastLineNumber; i += 1) {
+    let tmp = [1]
+    if (i > 1) {
+      for(let j = 1;j < i; j += 1) {
+        tmp.push(currentLine[i - 1][j - 1] + currentLine[i - 1][j])
+      }
+    }
+    tmp.push(1)
+    currentLine.push(tmp)
+  }
+  return currentLine[lineNumber - 1]
+}
+console.log(pascalTriangle(5))
+```
+
+A simple way of writing.
+
+```javascript
+const pascalTriangle = (lineNumber) => {
+  const currentLine = [1]
+
+  const currentLineSize = lineNumber + 1
+
+  for (let numIndex = 1; numIndex < currentLineSize; numIndex += 1) {
+    // I don't understand this script.
+    currentLine[numIndex] = (currentLine[numIndex - 1] * (lineNumber - numIndex + 1)) / numIndex
+  }
+
+  return currentLine
+}
+console.log(pascalTriangle(5))
 ```
 
 ## Note
