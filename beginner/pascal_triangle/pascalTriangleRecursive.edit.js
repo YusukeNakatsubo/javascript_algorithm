@@ -16,13 +16,20 @@ const pascalTriangleRecursive = (lineNumber) => {
   const previousLine = pascalTriangleRecursive(lineNumber - 1)
 
   for (let numIndex = 0; numIndex < currentLineSize; numIndex += 1) {
-    // 配列の[0]から値を取得 -> [0], [1] ...
+    // パスカルの三角形の値を順に取得していく
+    // 配列の[0]から値を取得
     const leftCoefficient = (numIndex - 1) >= 0 ? previousLine[numIndex - 1] : 0
-    // 配列の[1]から値を取得 -> [1], [2] ...
-    const rightCoefficient = numIndex < previousLineSize ? previousLine[numIndex] : 0
+    // leftCoefficient の右隣の値を取得
+    const rightCoefficient = previousLineSize  > numIndex ? previousLine[numIndex] : 0
+
+    // 値のチェック
+    console.log(leftCoefficient)
+    console.log(rightCoefficient)
+    console.log(`----------${numIndex}`)
+
     currentLine[numIndex] = leftCoefficient + rightCoefficient
   }
 
   return currentLine
 }
-console.log(pascalTriangleRecursive(3))
+console.log(pascalTriangleRecursive(1))
