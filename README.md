@@ -15,6 +15,7 @@ $ npm install -g mocha
   - Sieve of Eratosthenes(エラトステネスのふるい)
   - Is a power of two(累乗判定)
   - Pascal's Triangle(パスカルの三角形)
+  - Radian(ラジアン/弧度法)
 
 ## Beginner Course
 
@@ -315,6 +316,17 @@ const pascalTriangle = (lineNumber) => {
 console.log(pascalTriangle(5))
 ```
 
+### Radian(ラジアン/弧度法)
+>ラジアン（英: radian, 記号: rad）は、国際単位系 (SI) における角度（平面角）の単位である。円周上でその円の半径と同じ長さの弧を切り取る2本の半径が成す角の値と定義される。弧度（こど）とも言い、平面角の大きさをラジアンで測ることを弧度法と呼ぶ。
+
+```math
+# 弧度法と度数法の関係
+180°=π[rad]
+
+# 角度をラジアンに変換する
+θ  = θ  * π/180[rad]
+```
+
 ## Note
 
 ### export
@@ -341,3 +353,11 @@ console.log(pascalTriangle(5))
 >fill() メソッドは、開始インデックス（デフォルトは 0）から終了インデックス（デフォルトは array.length）までのすべての要素を、静的な値に変更した配列を返します。
 
 [fill()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)
+
+### Math.PI
+
+>Math.SQRT2 プロパティは、円周と直径の比率、およそ 3.14159 を表します。
+
+[Math.PI](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/PI)
+
+
