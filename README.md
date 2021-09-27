@@ -16,6 +16,7 @@ $ npm install -g mocha
   - Is a power of two(累乗判定)
   - Pascal's Triangle(パスカルの三角形)
   - Radian(ラジアン/弧度法)
+  - Fast Powering Algorithm(高速の累乗アルゴリズム)
 
 ## Beginner Course
 
@@ -325,6 +326,53 @@ console.log(pascalTriangle(5))
 
 # 角度をラジアンに変換する
 θ  = θ  * π/180[rad]
+```
+
+#### Radian to Degree
+
+```javascript
+/**
+ * @param {number} radian
+ * @return {number}
+ */
+module.exports = function radianToDegree(radian) {
+  return radian * (180 / Math.PI);
+}
+```
+
+#### Degree to Radian
+
+```javascript
+/**
+ * @param {number} degree
+ * @return {number}
+ */
+module.exports = function degreeToRadian(degree) {
+  return degree * (Math.PI / 180);
+}
+```
+
+### Fast Powering Algorithm(高速の累乗アルゴリズム)
+
+```javascript
+/**
+ * @param {number} base
+ * @param {number} power
+ * @return {number}
+ */
+module.exports = function fastPowering(base, power) {
+  if (power === 0) { return 1; }
+
+  // even
+  if (power % 2 === 0) {
+    const multiplier = fastPowering(base, power / 2);
+    return multiplier * multiplier;
+  }
+
+  // odd
+  const multiplier = fastPowering(base, Math.floor(power / 2));
+  return multiplier * multiplier * base;
+}
 ```
 
 ## Note
