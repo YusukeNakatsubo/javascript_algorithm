@@ -18,6 +18,7 @@ $ npm install -g mocha
   - Radian(ラジアン/弧度法)
   - Fast Powering Algorithm(高速の累乗アルゴリズム)
   - Cartesian Product(デカルト積)
+  - Fisher–Yates shuffle(フィッシャー–イェーツのシャッフル)
 
 ## Beginner Course
 
@@ -399,6 +400,31 @@ module.exports = function cartesianProduct (setA, setB) {
 }
 ```
 
+### Fisher–Yates shuffle(フィッシャー–イェーツのシャッフル)
+>フィッシャー–イェーツのシャッフル (英: Fisher–Yates shuffle) は、有限集合からランダムな順列を生成するアルゴリズムである。言い換えると、有限列をランダムな別の（シャッフルされた）順序の有限列に並べ直す方法である。
+
+```javascript
+/**
+ * @param {*[]} originalArray
+ * @return {*[]}
+ */
+const fisherYates = (originalArray) => {
+  // 配列をコピーして新しい配列オブジェクトを返す
+  const array = originalArray.slice(0);
+
+  // 配列の要素の位置を入れ替える
+  for (let i = (array.length - 1); i > 0; i -= 1) {
+    // ランダムなインデックス番号を発行
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    [array[i], array[randomIndex]] = [array[randomIndex], array[i]];
+    // console.log(array);
+  }
+
+  return array;
+}
+console.log(fisherYates([0, 1, 2, 3, 4]));
+```
+
 ## Note
 
 ### export
@@ -432,4 +458,9 @@ module.exports = function cartesianProduct (setA, setB) {
 
 [Math.PI](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/PI)
 
+### Array.slice()
+
+>start と end が配列の中の項目のインデックスを表している場合、start から end まで (end は含まれない) で選択された配列の一部の浅いコピーを新しい配列オブジェクトに作成して返します。元の配列は変更されません。
+
+[Array.slice()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
 
