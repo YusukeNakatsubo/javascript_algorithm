@@ -17,6 +17,7 @@ $ npm install -g mocha
   - Pascal's Triangle(パスカルの三角形)
   - Radian(ラジアン/弧度法)
   - Fast Powering Algorithm(高速の累乗アルゴリズム)
+  - Cartesian Product(デカルト積)
 
 ## Beginner Course
 
@@ -372,6 +373,29 @@ module.exports = function fastPowering(base, power) {
   // odd
   const multiplier = fastPowering(base, Math.floor(power / 2));
   return multiplier * multiplier * base;
+}
+```
+
+### Cartesian Product(デカルト積)
+
+```javascript
+/**
+ * @param {*[]} setA
+ * @param {*[]} setB
+ * @return {*[]}
+ */
+module.exports = function cartesianProduct (setA, setB) {
+  if (!setA || !setB || !setA.length || !setB.length) { return null; }
+
+  const product = [];
+
+  for (let indexA = 0; indexA < setA.length; indexA += 1) {
+    for (let indexB = 0; indexB < setB.length; indexB += 1) {
+      product.push([setA[indexA], setB[indexB]]);
+    }
+  }
+
+  return product;
 }
 ```
 
