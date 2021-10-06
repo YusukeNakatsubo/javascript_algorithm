@@ -23,6 +23,8 @@ $ npm install -g mocha
     - Fisher–Yates shuffle(フィッシャー–イェーツのシャッフル)
   - 文字列
     - ハミング距離
+  - 検索 
+    - リニアサーチ
 
 ## Beginner Course
 
@@ -426,6 +428,32 @@ module.exports = function hammingDistance(a,b) {
   }
   return distance;
 }
+```
+
+### リニアサーチ
+先頭から順番に探す値が見つかるまで探していくだけのアルゴリズム。
+
+```javascript
+/**
+ * @param {*[]} array
+ * @param {function(a, b)}
+ * @return {number} result
+ */
+const linearSearch = (array) => {
+  let result = -1;
+  let seekElement = 2;
+
+  if (array.length < 1) { return result; }
+  array.forEach((element, index) => {
+    if (element == seekElement) {
+      result = index;
+      return;
+    }
+  })
+  return result;
+}
+let array = [1, 3, 10, 2, 8];
+console.log(linearSearch(array));
 ```
 
 ## Note
