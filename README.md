@@ -432,10 +432,22 @@ console.log(fisherYates([0, 1, 2, 3, 4]));
 ### ハミング距離
 >情報理論において、ハミング距離（ハミングきょり、英: Hamming distance）とは、等しい文字数を持つ二つの文字列の中で、対応する位置にある異なった文字の個数である。別の言い方をすれば、ハミング距離は、ある文字列を別の文字列に変形する際に必要な置換回数を計測したものである。
 
-[ハミング距離](https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%9F%E3%83%B3%E3%82%B0%E8%B7%9D%E9%9B%A2)
-
 ```javascript
+/**
+ * @param {string} a
+ * @param {string} b
+ * @return {number}
+ */
+module.exports = function hammingDistance(a,b) {
+  // ガード節 処理すべきでないコードは最初に返却することで、その後の処理をシンプルに書く
+  if (a.length !== b.length) { throw new Error('Strings must be of the same length'); }
 
+  let distance = 0;
+  for (let i = 0; i < a.length; i += 1) {
+    if (a[i] !== b[i]) { distance += 1; }
+  }
+  return distance;
+}
 ```
 
 ## Note
