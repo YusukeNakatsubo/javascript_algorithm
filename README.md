@@ -53,7 +53,7 @@ module.exports = function factorial(number) {
  * @return {number}
  */
 module.exports = function factorialRecursive(number) {
-  return number > 1 ? number * factorialRecursive(number - 1) : 1
+  return number > 1 ? number * factorialRecursive(number - 1) : 1;
 }
 ```
 
@@ -67,25 +67,25 @@ module.exports = function factorialRecursive(number) {
  * @return {number[]}
  */
  module.exports = function fibonacci(number) {
-  const fibSequence = [1]
+  const fibSequence = [1];
 
-  let currentValue = 1
-  let previousValue = 0
+  let currentValue = 1;
+  let previousValue = 0;
 
-  if (number === 1) { return fibSequence }
+  if (number === 1) { return fibSequence; }
 
-  let iterationsCounter = number - 1
+  let iterationsCounter = number - 1;
 
   while (iterationsCounter) {
-    currentValue += previousValue
-    previousValue = currentValue - previousValue
+    currentValue += previousValue;
+    previousValue = currentValue - previousValue;
 
-    fibSequence.push(currentValue)
+    fibSequence.push(currentValue);
 
-    iterationsCounter -= 1
+    iterationsCounter -= 1;
   }
 
-  return fibSequence
+  return fibSequence;
 }
 ```
 
@@ -97,24 +97,16 @@ module.exports = function factorialRecursive(number) {
  * @return {boolean}
  */
  module.exports = function trialDivision(number) {
-  // Check if number is integer.
-  if (number % 1 !== 0) { return false }
+  if (number % 1 !== 0) { return false; }
+  if (number <= 1) { return false; }
+  if (number <= 3) { return true; }
+  if (number % 2 === 0) { return false; }
 
-  // If number is less than one then it isn't prime by definition.
-  if (number <= 1) { return false }
-
-  // All numbers from 2 to 3 are prime.
-  if (number <= 3) { return true }
-
-  // If the number is not divided by 2 then we may eliminate all further even dividers.
-  if (number % 2 === 0) { return false }
-
-  // If there is no dividers up to square root of n then there is no higher dividers as well.
   const dividerLimit = Math.sqrt(number);
   for (let divider = 3; divider <= dividerLimit; divider += 2) {
-    if (number % divider === 0) { return false }
+    if (number % divider === 0) { return false; }
   }
-  return true
+  return true;
 }
 ```
 
@@ -122,22 +114,18 @@ module.exports = function factorialRecursive(number) {
 
 ```javascript
 /**
- * Recursive version of Euclidean Algorithm of finding greatest common divisor (GCD).
  * @param {number} numberX
  * @param {number} numberY
  * @return {number}
  */
  module.exports = function euclideanAlgorithm(numberX, numberY) {
-  // Make input numbers positive.
-  const x = Math.abs(numberX)
-  const y = Math.abs(numberY)
+  const x = Math.abs(numberX);
+  const y = Math.abs(numberY);
 
-  // To make algorithm work faster instead of subtracting one number from the other
-  // we may use modulo operation.
   // ユークリッドの互除法 -> 割り切れるまであまりで互いに割り（除法）続ける
-  console.log(`is X = ${x}`)
-  console.log(`is Y = ${y}`)
-  return (y === 0) ? x : euclideanAlgorithm(y, x % y)
+  // console.log(`is X = ${x}`);
+  // console.log(`is Y = ${y}`);
+  return (y === 0) ? x : euclideanAlgorithm(y, x % y);
 }
 ```
 
@@ -151,16 +139,16 @@ module.exports = function factorialRecursive(number) {
  */
 // 最大公約数を求める
 const euclideanAlgorithm = (numberX, numberY) => {
-  const x = Math.abs(numberX)
-  const y = Math.abs(numberY)
+  const x = Math.abs(numberX);
+  const y = Math.abs(numberY);
 
-  return (y !== 0) ? euclideanAlgorithm(y, x % y) : x
+  return (y !== 0) ? euclideanAlgorithm(y, x % y) : x;
 }
 
 // 最小公倍数を求める
 // -> 2つの自然数 𝑎,𝑏 の最小公倍数 -> 𝑎 * 𝑏 / 𝑑(最大公約数)
 module.exports = function leastCommonMultiple(a, b) {
-  return ((a !== 0) || (b !== 0)) ? Math.abs(a * b) / euclideanAlgorithm(a, b) : 0
+  return ((a !== 0) || (b !== 0)) ? Math.abs(a * b) / euclideanAlgorithm(a, b) : 0;
 }
 ```
 
@@ -173,31 +161,21 @@ module.exports = function leastCommonMultiple(a, b) {
  * @return {number[]}
  */
 module.exports = function sieveOfEratosthenes(maxNumber) {
-  const isPrime = new Array(maxNumber + 1).fill(true)
-  isPrime[0] = false
-  isPrime[1] = false
+  const isPrime = new Array(maxNumber + 1).fill(true);
+  isPrime[0] = false;
+  isPrime[1] = false;
 
-  const primes = []
+  const primes = [];
 
   for (let number = 2; number <= maxNumber; number += 1) {
     if (isPrime[number] === true) {
-      primes.push(number)
+      primes.push(number);
 
-      /*
-       * Optimisation.
-       * Start marking multiples of `p` from `p * p`, and not from `2 * p`.
-       * The reason why this works is because, at that point, smaller multiples
-       * of `p` will have already been marked `false`.
-       *
-       * Warning: When working with really big numbers, the following line may cause overflow
-       * In that case, it can be changed to:
-       * let nextNumber = 2 * number
-       */
-      let nextNumber = number * number
+      let nextNumber = number * number;
 
       while (nextNumber <= maxNumber) {
-        isPrime[nextNumber] = false
-        nextNumber += number
+        isPrime[nextNumber] = false;
+        nextNumber += number;
       }
     }
   }
@@ -214,15 +192,15 @@ module.exports = function sieveOfEratosthenes(maxNumber) {
  * @return {boolean}
  */
 module.exports = function isPowerOfTwo(number) {
-  if (number < 1) { return false }
+  if (number < 1) { return false; }
 
   let dividedNumber = number
   while (dividedNumber !== 1) {
-    if (dividedNumber % 2 !== 0) { return false }
-    dividedNumber /= 2
+    if (dividedNumber % 2 !== 0) { return false; }
+    dividedNumber /= 2;
   }
 
-  return true
+  return true;
 }
 ```
 
@@ -242,26 +220,26 @@ Intuitive and easy to understand descriptions.
  * @return {number[]}
  */
  module.exports = function pascalTriangleRecursive(lineNumber) {
-  if (lineNumber === 0) { return [1] }
+  if (lineNumber === 0) { return [1]; }
 
   // 現在の行の位置
-  const currentLineSize = lineNumber + 1
+  const currentLineSize = lineNumber + 1;
   // 一つ前の行の位置
-  const previousLineSize = currentLineSize - 1
+  const previousLineSize = currentLineSize - 1;
 
   // 現在の行の配列
-  const currentLine = []
+  const currentLine = [];
   // 一つ前の行の配列
-  const previousLine = pascalTriangleRecursive(lineNumber - 1)
+  const previousLine = pascalTriangleRecursive(lineNumber - 1);
 
   for (let numIndex = 0; numIndex < currentLineSize; numIndex += 1) {
     // 配列の[0]から値を取得
-    const leftCoefficient = (numIndex - 1) >= 0 ? previousLine[numIndex - 1] : 0
-    const rightCoefficient = numIndex < previousLineSize ? previousLine[numIndex] : 0
-    currentLine[numIndex] = leftCoefficient + rightCoefficient
+    const leftCoefficient = (numIndex - 1) >= 0 ? previousLine[numIndex - 1] : 0;
+    const rightCoefficient = numIndex < previousLineSize ? previousLine[numIndex] : 0;
+    currentLine[numIndex] = leftCoefficient + rightCoefficient;
   }
 
-  return currentLine
+  return currentLine;
 }
 ```
 
@@ -291,36 +269,36 @@ const pascalTriangle = (lineNumber) => {
   if (lineNumber === 1) { return currentLine }
   const lastLineNumber = lineNumber
   for(let i = 1; i < lastLineNumber; i += 1) {
-    let tmp = [1]
+    let tmp = [1];
     if (i > 1) {
       for(let j = 1;j < i; j += 1) {
-        tmp.push(currentLine[i - 1][j - 1] + currentLine[i - 1][j])
+        tmp.push(currentLine[i - 1][j - 1] + currentLine[i - 1][j]);
       }
     }
-    tmp.push(1)
-    currentLine.push(tmp)
+    tmp.push(1);
+    currentLine.push(tmp);
   }
-  return currentLine[lineNumber - 1]
+  return currentLine[lineNumber - 1];
 }
-console.log(pascalTriangle(5))
+console.log(pascalTriangle(5));
 ```
 
 A simple way of writing.
 
 ```javascript
 const pascalTriangle = (lineNumber) => {
-  const currentLine = [1]
+  const currentLine = [1];
 
-  const currentLineSize = lineNumber + 1
+  const currentLineSize = lineNumber + 1;
 
   for (let numIndex = 1; numIndex < currentLineSize; numIndex += 1) {
     // I don't understand this script.
-    currentLine[numIndex] = (currentLine[numIndex - 1] * (lineNumber - numIndex + 1)) / numIndex
+    currentLine[numIndex] = (currentLine[numIndex - 1] * (lineNumber - numIndex + 1)) / numIndex;
   }
 
-  return currentLine
+  return currentLine;
 }
-console.log(pascalTriangle(5))
+console.log(pascalTriangle(5));
 ```
 
 ### Radian(ラジアン/弧度法)
