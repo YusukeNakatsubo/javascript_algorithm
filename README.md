@@ -445,10 +445,7 @@ const linearSearch = (array) => {
 
   if (array.length < 1) { return result; }
   array.forEach((element, index) => {
-    if (element == seekElement) {
-      result = index;
-      return;
-    }
+    if (element == seekElement) { return result = index; }
   })
   return result;
 }
