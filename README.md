@@ -7,18 +7,22 @@ $ npm install -g mocha
 ## Index
 
 - Beginner Course
-  - Factorial(階乗)
-  - Fibonacci(フィボナッチ数列)
-  - Trial Division(素数判定)
-  - Euclidean algorithm(ユークリッドの互除法/最大公約数)
-  - Least common multiple(最小公倍数)
-  - Sieve of Eratosthenes(エラトステネスのふるい)
-  - Is a power of two(累乗判定)
-  - Pascal's Triangle(パスカルの三角形)
-  - Radian(ラジアン/弧度法)
-  - Fast Powering Algorithm(高速の累乗アルゴリズム)
-  - Cartesian Product(デカルト積)
-  - Fisher–Yates shuffle(フィッシャー–イェーツのシャッフル)
+  - 数学
+    - Factorial(階乗)
+    - Fibonacci(フィボナッチ数列)
+    - Trial Division(素数判定)
+    - Euclidean algorithm(ユークリッドの互除法/最大公約数)
+    - Least common multiple(最小公倍数)
+    - Sieve of Eratosthenes(エラトステネスのふるい)
+    - Is a power of two(累乗判定)
+    - Pascal's Triangle(パスカルの三角形)
+    - Radian(ラジアン/弧度法)
+    - Fast Powering Algorithm(高速の累乗アルゴリズム)
+  - セット
+    - Cartesian Product(デカルト積)
+    - Fisher–Yates shuffle(フィッシャー–イェーツのシャッフル)
+  - 文字列
+    - ハミング距離
 
 ## Beginner Course
 
@@ -423,6 +427,15 @@ const fisherYates = (originalArray) => {
   return array;
 }
 console.log(fisherYates([0, 1, 2, 3, 4]));
+```
+
+### ハミング距離
+>情報理論において、ハミング距離（ハミングきょり、英: Hamming distance）とは、等しい文字数を持つ二つの文字列の中で、対応する位置にある異なった文字の個数である。別の言い方をすれば、ハミング距離は、ある文字列を別の文字列に変形する際に必要な置換回数を計測したものである。
+
+[ハミング距離](https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%9F%E3%83%B3%E3%82%B0%E8%B7%9D%E9%9B%A2)
+
+```javascript
+
 ```
 
 ## Note
