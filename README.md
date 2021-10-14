@@ -442,8 +442,8 @@ module.exports = function hammingDistance(a,b) {
  * @return {number} result
  */
 const linearSearch = (array, number) => {
-  let result = -1;
-  let seekElement = number;
+  let result      = -1,
+      seekElement = number;
 
   if (array.length < 1) { return result; }
   array.forEach((element, index) => {
@@ -467,8 +467,8 @@ console.log(linearSearch(array, 2));
 const binarySearch = (array, number) => {
   let result      = -1,
       seekElement = number,
-      startIndex   = 0,
-      endIndex  = array.length - 1,
+      startIndex  = 0,
+      endIndex    = array.length - 1,
       middleIndex;
 
   if (array.length < 1) { return result; }
