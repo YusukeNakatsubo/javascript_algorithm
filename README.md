@@ -441,9 +441,9 @@ module.exports = function hammingDistance(a,b) {
  * @param {function(a, b)}
  * @return {number} result
  */
-const linearSearch = (array) => {
+const linearSearch = (array, number) => {
   let result = -1;
-  let seekElement = 2;
+  let seekElement = number;
 
   if (array.length < 1) { return result; }
   array.forEach((element, index) => {
@@ -452,7 +452,7 @@ const linearSearch = (array) => {
   return result;
 }
 let array = [1, 3, 10, 2, 8];
-console.log(linearSearch(array));
+console.log(linearSearch(array, 2));
 ```
 
 ### Binary Search(バイナリサーチ／二分探索)
@@ -461,7 +461,7 @@ console.log(linearSearch(array));
 ```javascript
 /**
  * @param {*[]} array
- * @param {function(a)}
+ * @param {function(a, b)}
  * @return {number} result
  */
 const binarySearch = (array, number) => {
