@@ -27,6 +27,9 @@ $ npm install -g mocha
     - Linear Search(リニアサーチ)
     - ~~Jump Search(ジャンプ探索)~~
     - Binary Search(バイナリサーチ／二分探索)
+    - ~~Interpolation Search(内挿探索)~~
+  - ソート
+  
 
 ## Beginner Course
 
