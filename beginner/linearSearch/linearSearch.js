@@ -3,9 +3,9 @@
  * @param {function(a, b)}
  * @return {number} result
  */
-const linearSearch = (array) => {
-  let result = -1;
-  let seekElement = 2;
+const linearSearch = (array, number) => {
+  let result      = -1;
+  let seekElement = number;
 
   if (array.length < 1) { return result; }
   array.forEach((element, index) => {
@@ -14,4 +14,4 @@ const linearSearch = (array) => {
   return result;
 }
 let array = [1, 3, 10, 2, 8];
-console.log(linearSearch(array));
+console.log(linearSearch(array, 2));

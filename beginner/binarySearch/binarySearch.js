@@ -1,13 +1,13 @@
 /**
  * @param {*[]} array
- * @param {function(a)}
+ * @param {function(a, b)}
  * @return {number} result
  */
 const binarySearch = (array, number) => {
   let result      = -1,
       seekElement = number,
-      startIndex   = 0,
-      endIndex  = array.length - 1,
+      startIndex  = 0,
+      endIndex    = array.length - 1,
       middleIndex;
 
   if (array.length < 1) { return result; }
