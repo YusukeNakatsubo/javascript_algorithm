@@ -22,9 +22,11 @@ $ npm install -g mocha
     - Cartesian Product(デカルト積)
     - Fisher–Yates shuffle(フィッシャー–イェーツのシャッフル)
   - 文字列
-    - ハミング距離
+    - Hamming Distance(ハミング距離)
   - 検索 
-    - リニアサーチ
+    - Linear Search(リニアサーチ)
+    - ~~Jump Search(ジャンプ探索)~~
+    - Binary Search(バイナリサーチ／二分探索)
 
 ## Beginner Course
 
@@ -430,7 +432,7 @@ module.exports = function hammingDistance(a,b) {
 }
 ```
 
-### リニアサーチ
+### Linear Search(リニアサーチ)
 先頭から順番に探す値が見つかるまで探していくだけのアルゴリズム。
 
 ```javascript
@@ -451,6 +453,40 @@ const linearSearch = (array) => {
 }
 let array = [1, 3, 10, 2, 8];
 console.log(linearSearch(array));
+```
+
+### Binary Search(バイナリサーチ／二分探索)
+ソート済みの配列において、検索する間隔を半分に分割しながらデータを探し出すアルゴリズム。
+
+```javascript
+/**
+ * @param {*[]} array
+ * @param {function(a))}
+ * @return {number} result
+ */
+const binarySearch = (array) => {
+  let result      = -1,
+      seekElement = 2,
+      leftIndex   = 0,
+      rightIndex  = array.length - 1,
+      middleIndex;
+
+  if (array.length < 1) { return result; }
+  while (leftIndex <= rightIndex ) {
+    middleIndex = Math.floor((rightIndex + leftIndex) / 2);
+    if(array[middleIndex] === seekElement) {
+      result = middleIndex;
+      break;
+    } else if (array[middleIndex] < seekElement) {
+      leftIndex = middleIndex + 1;
+    } else if (array[middleIndex] > seekElement) {
+      rightIndex = middleIndex - 1;
+    }
+  }
+  return result;
+}
+let array = [1, 3, 10, 2, 8].sort((a, b) => a - b);
+console.log(binarySearch(array));
 ```
 
 ## Note
