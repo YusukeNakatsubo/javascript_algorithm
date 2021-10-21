@@ -31,6 +31,7 @@ $ npm install -g mocha
   - 並び替え 
     - Bubble Sort(バブルソート) 
     - Selection Sort(選択ソート)
+    - Insertion Sort(挿入ソート)
 
 ## Beginner Course
 
@@ -548,6 +549,36 @@ const selectionSort = (array) => {
 let array = [1, 3, 10, 2, 8];
 console.log(selectionSort(array));
 ```
+
+### Insertion Sort(挿入ソート)
+>整列してある配列に追加要素を適切な場所に挿入すること。時間計算量は平均・最悪ケースでともに Ο(n2) であり、クイックソートやマージソートなどと比べれば遅い。
+
+```javascript
+/**
+ * @param {*[]} originalArray
+ * @return {number[]} result
+ */
+const insertionSort = (array) => {
+  if (array.length === 0) { return array; }
+
+  for (let i = 1; i < array.length; i += 1) {
+    let currentNumber = array[i];
+    let previousIndex = i - 1;
+    while (previousIndex > - 1 && currentNumber < array[previousIndex]) {
+      // 現在の値と前の値と比較し、大きい値を後ろへ書き換える
+      array[previousIndex + 1] = array[previousIndex];
+      previousIndex --;
+    }
+    // 先頭の値を書き換える
+    array[previousIndex + 1] = currentNumber;
+  }
+
+  return array;
+}
+let array = [1, 3, 10, 2, 8];
+console.log(insertionSort(array));
+```
+
 
 ## Note
 
