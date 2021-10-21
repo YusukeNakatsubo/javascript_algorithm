@@ -9,11 +9,11 @@ const insertionSort = (array) => {
     let currentNumber = array[i];
     let previousIndex = i - 1;
     while (previousIndex > - 1 && currentNumber < array[previousIndex]) {
-      // 現在の値と前の値と比較し、大きい値を後ろへ入れ替え続ける
+      // 現在の値と前の値と比較し、大きい値を後ろへ書き換える
       array[previousIndex + 1] = array[previousIndex];
       previousIndex --;
     }
-    // この記述が理解できていない
+    // 先頭の値を書き換える
     array[previousIndex + 1] = currentNumber;
   }
 
