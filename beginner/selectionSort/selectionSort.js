@@ -7,17 +7,15 @@ const selectionSort = (array) => {
 
   for (let i = 0; i < array.length; i += 1) {
     // 最小値のインデックス番号を探す
-    let minNumber = i;
+    let minIndex = i;
     for (let j = i + 1; j < array.length; j += 1) {
-      if (array[j] < array[minNumber]) {
-        minNumber = j;
+      if (array[j] < array[minIndex]) {
+        minIndex = j;
       }
     }
-    // 最小値のインデックス番号もつ値を、先頭から順に入れ替えていく
-    if (minNumber !== 1) {
-      let tmp = array[i];
-      array[i] = array[minNumber];
-      array[minNumber] = tmp;
+    // 最小値のインデックス番号もつ値を入れ替える
+    if (minIndex !== 1) {
+      [array[i], array[minIndex]] = [array[minIndex], array[i]];
     }
   }
 
