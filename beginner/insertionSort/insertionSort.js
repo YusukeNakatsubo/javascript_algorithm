@@ -7,15 +7,14 @@ const insertionSort = (array) => {
 
   for (let i = 1; i < array.length; i += 1) {
     let currentNumber = array[i];
-    let j = i - 1;
-    while (j > - 1 && currentNumber < array[j]) {
-      array[j + 1] = array[j];
-      j --;
+    let previousIndex = i - 1;
+    while (previousIndex > - 1 && currentNumber < array[previousIndex]) {
+      // 現在の値と前の値と比較し、大きい値を後ろへ入れ替え続ける
+      array[previousIndex + 1] = array[previousIndex];
+      previousIndex --;
     }
-    array[j + 1] = currentNumber;
-    console.log(currentNumber);
-    console.log(array);
-    console.log('----------')
+    // この記述が理解できていない
+    array[previousIndex + 1] = currentNumber;
   }
 
   return array;
