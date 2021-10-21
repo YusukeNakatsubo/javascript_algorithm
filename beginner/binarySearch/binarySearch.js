@@ -22,6 +22,7 @@ const binarySearch = (array, number) => {
       endIndex = middleIndex - 1;
     }
   }
+
   return result;
 }
 let array = [1, 3, 10, 2, 8].sort((a, b) => a - b);
