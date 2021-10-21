@@ -1,5 +1,5 @@
 /**
- * @param {*[]} array
+ * @param {*[]} originalArray
  * @return {number[]} result
  */
 const bubbleSort = (array) => {
