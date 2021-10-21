@@ -30,6 +30,7 @@ $ npm install -g mocha
     - ~~Interpolation Search(内挿探索)~~
   - 並び替え 
     - Bubble Sort(バブルソート) 
+    - Selection Sort(選択ソート)
 
 ## Beginner Course
 
@@ -497,16 +498,16 @@ console.log(binarySearch(array, 2));
 
 ```javascript
 /**
- * @param {*[]} array
- * @return {*[]} result
+ * @param {*[]} originalArray
+ * @return {number[]} result
  */
 const bubbleSort = (array) => {
+  if (array.length === 0) { return array; }
+
   for (let i = 0; i < array.length; i += 1) {
     for (let j = 0; j < array.length; j += 1) {
       if (array[j] > array[j+1]) {
-        let tmp = array[j]
-        array[j] = array[j+1];
-        array[j+1] = tmp;
+        [array[j], array[j+1]] = [array[j+1], array[j]];
       }
     }
   }
@@ -514,6 +515,38 @@ const bubbleSort = (array) => {
 }
 let array = [1, 3, 10, 2, 8];
 console.log(bubbleSort(array));
+```
+
+### Selection Sort(選択ソート)
+> 配列から最小値を探し、配列の先頭要素と入れ替えていくことで並べ替える。
+きわめて直感的で単純なアルゴリズムで、実装も容易である一方、最悪時間計算量は O(n2) と遅いため、一般にはクイックソートなどのより高速な方法が利用される。
+
+```javascript
+/**
+ * @param {*[]} originalArray
+ * @return {number[]} result
+ */
+const selectionSort = (array) => {
+  if (array.length === 0) { return array; }
+
+  for (let i = 0; i < array.length; i += 1) {
+    // 最小値のインデックス番号を探す
+    let minIndex = i;
+    for (let j = i + 1; j < array.length; j += 1) {
+      if (array[j] < array[minIndex]) {
+        minIndex = j;
+      }
+    }
+    // 最小値のインデックス番号もつ値を入れ替える
+    if (minIndex !== 1) {
+      [array[i], array[minIndex]] = [array[minIndex], array[i]];
+    }
+  }
+
+  return array;
+}
+let array = [1, 3, 10, 2, 8];
+console.log(selectionSort(array));
 ```
 
 ## Note
