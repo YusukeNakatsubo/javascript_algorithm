@@ -13,7 +13,7 @@ const binarySearch = (array, number) => {
   if (array.length < 1) { return result; }
   while (startIndex <= endIndex ) {
     middleIndex = Math.floor((endIndex + startIndex) / 2);
-    if(array[middleIndex] === seekElement) {
+    if (array[middleIndex] === seekElement) {
       result = middleIndex;
       break;
     } else if (array[middleIndex] < seekElement) {
