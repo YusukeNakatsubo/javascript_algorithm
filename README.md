@@ -29,7 +29,7 @@ $ npm install -g mocha
     - Binary Search(バイナリサーチ／二分探索)
     - ~~Interpolation Search(内挿探索)~~
   - 並び替え 
-  
+    - Bubble Sort(バブルソート) 
 
 ## Beginner Course
 
@@ -490,6 +490,30 @@ const binarySearch = (array, number) => {
 }
 let array = [1, 3, 10, 2, 8].sort((a, b) => a - b);
 console.log(binarySearch(array, 2));
+```
+
+### Bubble Sort(バブルソート)
+>隣り合う要素の大小を比較しながら整列させること。最悪計算時間がO(n2)と遅いが、アルゴリズムが単純で実装が容易なため、また並列処理との親和性が高いことから、しばしば用いられる。安定な内部ソート。
+
+```javascript
+/**
+ * @param {*[]} array
+ * @return {*[]} result
+ */
+const bubbleSort = (array) => {
+  for (let i = 0; i < array.length; i += 1) {
+    for (let j = 0; j < array.length; j += 1) {
+      if (array[j] > array[j+1]) {
+        let tmp = array[j]
+        array[j] = array[j+1];
+        array[j+1] = tmp;
+      }
+    }
+  }
+  return array;
+}
+let array = [1, 3, 10, 2, 8];
+console.log(bubbleSort(array));
 ```
 
 ## Note
