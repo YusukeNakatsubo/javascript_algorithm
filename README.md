@@ -32,6 +32,7 @@ $ npm install -g mocha
     - Bubble Sort(バブルソート) 
     - Selection Sort(選択ソート)
     - Insertion Sort(挿入ソート)
+    - ~~Heap Sort(ヒープソート)~~
 
 ## Beginner Course
 
